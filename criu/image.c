@@ -517,7 +517,7 @@ void close_image(struct cr_img *img)
 		unlinkat(get_service_fd(IMG_FD_OFF), img->path, 0);
 		xfree(img->path);
 	} else if (!empty_image(img)) {
-    fsync(img->_x.fd);
+    /*fsync(img->_x.fd);*/
 		bclose(&img->_x);
   }
 
